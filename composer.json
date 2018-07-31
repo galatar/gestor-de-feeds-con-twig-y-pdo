@@ -1,0 +1,15 @@
+{
+    "name": "galatar/gestor-de-feeds",
+    "description": "Gestor de feeds con Twig y PDO",
+    "type": "project",
+    "require": {
+        "twig/twig": "^2.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juanan Ruiz",
+            "email": "juanan@us.es"
+        }
+    ]
+}
