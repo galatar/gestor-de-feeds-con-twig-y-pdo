@@ -4,6 +4,13 @@
 {% block title %}Inicio{% endblock %}
 
 {% block contenido %}
-    <h2>Gestor de feeds</h2>
-    <p>Aquí pronto habrá muchos artículos para leer</p>
+    <ul>
+        {% for entrada in entradas %}
+            <li><img src="{{ entrada.image.url }}"><a href="{{ entrada.link }}">{{ entrada.title }}</a>
+                ({{ entrada.link }})
+                <p>{{ entrada.pubDate|date('d-m-Y') }}</p>
+                <p>{{ entrada.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
