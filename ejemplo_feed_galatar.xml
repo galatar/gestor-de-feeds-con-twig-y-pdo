@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
-                                           xmlns:content="http://purl.org/rss/1.0/modules/content/"
-                                           xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-                                           xmlns:dc="http://purl.org/dc/elements/1.1/"
-                                           xmlns:atom="http://www.w3.org/2005/Atom"
-                                           xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-                                           xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-                                           xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" >
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
 
     <channel>
         <title>Galatar</title>
-        <atom:link href="http://galatar.com/feed/" rel="self" type="application/rss+xml" />
+        <atom:link href="http://galatar.com/feed/" rel="self" type="application/rss+xml"/>
         <link>http://galatar.com</link>
         <description>Programación Web de cero a infinito</description>
         <lastBuildDate>Tue, 31 Jul 2018 15:22:51 +0000</lastBuildDate>
@@ -25,18 +26,20 @@
             <width>32</width>
             <height>32</height>
         </image>
-        <site xmlns="com-wordpress:feed-additions:1">123870268</site>	<item>
-        <title>Generar código autonumérico con reinicio anual</title>
-        <link>http://galatar.com/generar-codigo-autonumerico-con-reinicio-anual/</link>
-        <comments>http://galatar.com/generar-codigo-autonumerico-con-reinicio-anual/#respond</comments>
-        <pubDate>Wed, 25 Jul 2018 15:19:34 +0000</pubDate>
-        <dc:creator><![CDATA[Juanan Ruiz]]></dc:creator>
-        <category><![CDATA[PHP]]></category>
-        <category><![CDATA[SQL]]></category>
+        <site xmlns="com-wordpress:feed-additions:1">123870268</site>
+        <item>
+            <title>Generar código autonumérico con reinicio anual</title>
+            <link>http://galatar.com/generar-codigo-autonumerico-con-reinicio-anual/</link>
+            <comments>http://galatar.com/generar-codigo-autonumerico-con-reinicio-anual/#respond</comments>
+            <pubDate>Wed, 25 Jul 2018 15:19:34 +0000</pubDate>
+            <dc:creator><![CDATA[Juanan Ruiz]]></dc:creator>
+            <category><![CDATA[PHP]]></category>
+            <category><![CDATA[SQL]]></category>
 
-        <guid isPermaLink="false">http://galatar.com/?p=115</guid>
-        <description><![CDATA[Siempre aconsejo que las tablas de una base de datos relacional tengan un campo clave autonumérico de tipo entero, que sea totalmente independiente de cualquier otro campo que contenga la tabla y de cualquier otro campo que forme parte de la &#8220;lógica de negocio&#8221;. Por muy inmutable que te pueda parecer cualquier otro dato, como [&#8230;]]]></description>
-        <content:encoded><![CDATA[<p>Siempre aconsejo que las tablas de una base de datos relacional tengan un campo clave autonumérico de tipo entero, que sea totalmente independiente de cualquier otro campo que contenga la tabla y de cualquier otro campo que forme parte de la &#8220;lógica de negocio&#8221;. Por muy inmutable que te pueda parecer cualquier otro dato, como el DNI, la matrícula de un coche o el código de una factura, es preferible tener una clave adicional que identifique ese registro de manera independiente en la base de datos, que &#8220;no tenga que ver nada con nadie&#8221;. </p>
+            <guid isPermaLink="false">http://galatar.com/?p=115</guid>
+            <description>
+                <![CDATA[Siempre aconsejo que las tablas de una base de datos relacional tengan un campo clave autonumérico de tipo entero, que sea totalmente independiente de cualquier otro campo que contenga la tabla y de cualquier otro campo que forme parte de la &#8220;lógica de negocio&#8221;. Por muy inmutable que te pueda parecer cualquier otro dato, como [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>Siempre aconsejo que las tablas de una base de datos relacional tengan un campo clave autonumérico de tipo entero, que sea totalmente independiente de cualquier otro campo que contenga la tabla y de cualquier otro campo que forme parte de la &#8220;lógica de negocio&#8221;. Por muy inmutable que te pueda parecer cualquier otro dato, como el DNI, la matrícula de un coche o el código de una factura, es preferible tener una clave adicional que identifique ese registro de manera independiente en la base de datos, que &#8220;no tenga que ver nada con nadie&#8221;. </p>
 <p><span id="more-115"></span></p>
 <p>Hay veces que además de ese campo necesitarás generar una clave única que vaya en parte codificada y en parte autogenerada. Un ejemplo típico suele ser el código de una factura. La mayoría de las empresas utilizan algún tipo de código en el que aparece el año y un numeral que se va incrementando a lo largo del año para volver a cero al año siguiente. </p>
 <p>Imagina que tienes que generar una factura que sigue una numeración parecida a esta: &#8220;F-0001/2018&#8221;. Vas a ver como generar una consulta SQL que encuentre el código de factura más alto del año y te devuelva el siguiente. Sería estupendo que también devolviera el número correcto si es la primera factura del año o que le pudiéras pedir el siguiente número de factura de cualquier año concreto. No es mucho pedir ¿no?</p>
@@ -85,9 +88,10 @@ CONCAT<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'F
 <span style="color: #b1b100;">echo</span> <span style="color: #0000ff;">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span><span style="color: #339933;">;</span></div></td></tr></tbody></table></div>
 <p>Tienes disponible el <a href="https://github.com/galatar/generar-codigo-autonumerico-con-reinicio-anual">código de este tutorial en github</a> por si quieres probarlo &#8220;al completo&#8221;.</p>
 ]]></content:encoded>
-        <wfw:commentRss>http://galatar.com/generar-codigo-autonumerico-con-reinicio-anual/feed/</wfw:commentRss>
-        <slash:comments>0</slash:comments>
-        <post-id xmlns="com-wordpress:feed-additions:1">115</post-id>	</item>
+            <wfw:commentRss>http://galatar.com/generar-codigo-autonumerico-con-reinicio-anual/feed/</wfw:commentRss>
+            <slash:comments>0</slash:comments>
+            <post-id xmlns="com-wordpress:feed-additions:1">115</post-id>
+        </item>
         <item>
             <title>Herencia compleja de plantillas en twig</title>
             <link>http://galatar.com/herencia-compleja-de-plantillas-en-twig/</link>
@@ -99,7 +103,8 @@ CONCAT<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'F
             <category><![CDATA[Twig]]></category>
 
             <guid isPermaLink="false">http://galatar.com/?p=104</guid>
-            <description><![CDATA[La posibilidad de realizar herencias de plantillas o &#8216;templates&#8217; en Twig es una de las características más útiles de este motor de plantillas. Sin embargo en proyectos más complejos la herencia simple de plantillas se queda corta y Twig no permite la herencia múltiple (quizás por la complejidad indeseable que esto supondría). Lo que si [&#8230;]]]></description>
+            <description>
+                <![CDATA[La posibilidad de realizar herencias de plantillas o &#8216;templates&#8217; en Twig es una de las características más útiles de este motor de plantillas. Sin embargo en proyectos más complejos la herencia simple de plantillas se queda corta y Twig no permite la herencia múltiple (quizás por la complejidad indeseable que esto supondría). Lo que si [&#8230;]]]></description>
             <content:encoded><![CDATA[<p><img src="http://galatar.com/wp-content/uploads/2018/07/logo_twig-300x241.png" alt="Logo motor de plantillas Twig" width="300" height="241" class="alignright size-medium wp-image-111" srcset="http://galatar.com/wp-content/uploads/2018/07/logo_twig-300x241.png 300w, http://galatar.com/wp-content/uploads/2018/07/logo_twig.png 471w" sizes="(max-width: 300px) 100vw, 300px" />La posibilidad de realizar herencias de plantillas o &#8216;templates&#8217; en Twig es una de las características más útiles de este motor de plantillas.</p>
 <p>Sin embargo en proyectos más complejos la herencia simple de plantillas se queda corta y Twig no permite la herencia múltiple (quizás por la complejidad indeseable que esto supondría).</p>
 <p>Lo que si está permitido, como he descubierto con alegría hace poco, es la herencia en cascada o herencia por niveles. Esto permite personalizar completamente una aplicación que esté organizada de manera modular o una web que tenga secciones muy diferenciadas.<br />
@@ -178,7 +183,8 @@ CONCAT<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'F
 ]]></content:encoded>
             <wfw:commentRss>http://galatar.com/herencia-compleja-de-plantillas-en-twig/feed/</wfw:commentRss>
             <slash:comments>0</slash:comments>
-            <post-id xmlns="com-wordpress:feed-additions:1">104</post-id>	</item>
+            <post-id xmlns="com-wordpress:feed-additions:1">104</post-id>
+        </item>
         <item>
             <title>Como crear una lista horizontal con HTML y CSS</title>
             <link>http://galatar.com/como-crear-una-lista-horizontal-con-html-y-css/</link>
@@ -188,7 +194,8 @@ CONCAT<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'F
             <category><![CDATA[CSS]]></category>
 
             <guid isPermaLink="false">http://galatar.com/?p=88</guid>
-            <description><![CDATA[Si lo piensas un poco HTML es un lenguaje enfocado a apilar los contenidos verticalmente. Los únicos contenidos que quedan alineados horizontalmente son los que están dentro de una misma etiqueta o los que utilizan etiquetas de caracteres como &#60;b&#62;, &#60;i&#62;, &#60;a&#62;, &#60;span&#62; El resto de etiquetas va enfocada a bloques y la disposición por [&#8230;]]]></description>
+            <description>
+                <![CDATA[Si lo piensas un poco HTML es un lenguaje enfocado a apilar los contenidos verticalmente. Los únicos contenidos que quedan alineados horizontalmente son los que están dentro de una misma etiqueta o los que utilizan etiquetas de caracteres como &#60;b&#62;, &#60;i&#62;, &#60;a&#62;, &#60;span&#62; El resto de etiquetas va enfocada a bloques y la disposición por [&#8230;]]]></description>
             <content:encoded><![CDATA[<p><img src="http://galatar.com/wp-content/uploads/2018/06/lista-horizontal-iconos-300x163.png" alt="Iconos con distribución vertical y horizontal" width="300" height="163" class="aligncenter size-medium wp-image-156" srcset="http://galatar.com/wp-content/uploads/2018/06/lista-horizontal-iconos-300x163.png 300w, http://galatar.com/wp-content/uploads/2018/06/lista-horizontal-iconos.png 744w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 <p>Si lo piensas un poco HTML es un lenguaje enfocado a apilar los contenidos verticalmente. Los únicos contenidos que quedan alineados horizontalmente son los que están dentro de una misma etiqueta o los que utilizan etiquetas de caracteres como <b>&lt;b&gt;</b>, <b>&lt;i&gt;</b>, <b>&lt;a&gt;</b>, <b>&lt;span&gt;</b></p>
 <p>El resto de etiquetas va enfocada a bloques y la disposición por defecto es que se alineen verticalmente <b>&lt;h1&gt;</b>, <b>&lt;p&gt;</b>, <b>&lt;div&gt;</b>, <b>&lt;li&gt;</b>, <b>&lt;dd&gt;</b>, <b>&lt;dt&gt;</b></p>
@@ -235,7 +242,8 @@ CONCAT<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'F
 ]]></content:encoded>
             <wfw:commentRss>http://galatar.com/como-crear-una-lista-horizontal-con-html-y-css/feed/</wfw:commentRss>
             <slash:comments>0</slash:comments>
-            <post-id xmlns="com-wordpress:feed-additions:1">88</post-id>	</item>
+            <post-id xmlns="com-wordpress:feed-additions:1">88</post-id>
+        </item>
         <item>
             <title>Cómo acceder a la API de WordPress desde PHP</title>
             <link>http://galatar.com/como-acceder-a-la-api-de-wordpress-desde-php/</link>
@@ -245,7 +253,8 @@ CONCAT<span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">'F
             <category><![CDATA[WordPress]]></category>
 
             <guid isPermaLink="false">http://galatar.com/?p=61</guid>
-            <description><![CDATA[En este artículo te muestro un ejemplo de una API de una aplicación web, en este caso la API REST de WordPress. Tras la explicación inicial te planteo un reto para que intentes ver en la práctica como funciona esta API, que utilidades podrías darle y cómo atacarla desde PHP. Más adelante tienes una posible [&#8230;]]]></description>
+            <description>
+                <![CDATA[En este artículo te muestro un ejemplo de una API de una aplicación web, en este caso la API REST de WordPress. Tras la explicación inicial te planteo un reto para que intentes ver en la práctica como funciona esta API, que utilidades podrías darle y cómo atacarla desde PHP. Más adelante tienes una posible [&#8230;]]]></description>
             <content:encoded><![CDATA[<p>En este artículo te muestro un ejemplo de una API de una aplicación web, en este caso la API REST de WordPress. Tras la explicación inicial te planteo un reto para que intentes ver en la práctica como funciona esta API, que utilidades podrías darle y cómo atacarla desde PHP.</p>
 <p>Más adelante tienes una posible solución al ejercicio por si te has quedado atascado en el alguno de los pasos o para que puedas compararla con la tuya.<span id="more-61"></span></p>
 <h2>Bueno, pero ¿qué es una API?</h2>
@@ -350,7 +359,8 @@ Para &#8220;atacar&#8221; esta API se puede utilizar cualquier lenguaje o tecnol
 ]]></content:encoded>
             <wfw:commentRss>http://galatar.com/como-acceder-a-la-api-de-wordpress-desde-php/feed/</wfw:commentRss>
             <slash:comments>0</slash:comments>
-            <post-id xmlns="com-wordpress:feed-additions:1">61</post-id>	</item>
+            <post-id xmlns="com-wordpress:feed-additions:1">61</post-id>
+        </item>
         <item>
             <title>Automatiza la creación de tus proyectos con Composer</title>
             <link>http://galatar.com/automatiza-la-creacion-de-tus-proyectos-con-composer/</link>
@@ -360,7 +370,8 @@ Para &#8220;atacar&#8221; esta API se puede utilizar cualquier lenguaje o tecnol
             <category><![CDATA[Herramientas]]></category>
 
             <guid isPermaLink="false">http://galatar.com/?p=17</guid>
-            <description><![CDATA[Que es Composer y en que puede ayudarme Cuando creas un nuevo proyecto de desarrollo de código, sea en el lenguaje que sea, no creo que empieces desde cero y teclees todo el código desde principio a fin. Normalmente vas a utilizar partes de algún proyecto ya desarrollado, por ti u otra persona, como eje [&#8230;]]]></description>
+            <description>
+                <![CDATA[Que es Composer y en que puede ayudarme Cuando creas un nuevo proyecto de desarrollo de código, sea en el lenguaje que sea, no creo que empieces desde cero y teclees todo el código desde principio a fin. Normalmente vas a utilizar partes de algún proyecto ya desarrollado, por ti u otra persona, como eje [&#8230;]]]></description>
             <content:encoded><![CDATA[<h2>Que es Composer y en que puede ayudarme</h2>
 <p>Cuando creas un nuevo proyecto de desarrollo de código, sea en el lenguaje que sea, no creo que empieces desde cero y teclees todo el código desde principio a fin. Normalmente vas a utilizar partes de algún proyecto ya desarrollado, por ti u otra persona, como eje del proyecto y luego irás añadiendo librerías por aquí y por allá para empezar con alguna base. Me arriesgaría a decir que todo este código &#8220;importado&#8221; puede llegar a suponer el 75% del proyecto.</p>
 <p>Normalmente lo que hacemos para esta tarea es copiar una carpeta de una librería que usamos en un proyecto del año pasado, otra que encontramos hace poco en la web, código que hemos desarrollado para un proyecto anterior y que poco a poco vamos adaptando a este, etc.</p>
@@ -509,8 +520,10 @@ Ahora ve a tu navegador web y teclea <a href="http://localhost:8000" target="_bl
 <li><a href="http://librosweb.es/libro/composer/capitulo_2/cargando_clases_de_forma_automatica.html"> Libros Web: Composer, el manual oficial</a></li>
 </ul>
 ]]></content:encoded>
-            <wfw:commentRss>http://galatar.com/automatiza-la-creacion-de-tus-proyectos-con-composer/feed/</wfw:commentRss>
+            <wfw:commentRss>http://galatar.com/automatiza-la-creacion-de-tus-proyectos-con-composer/feed/
+            </wfw:commentRss>
             <slash:comments>1</slash:comments>
-            <post-id xmlns="com-wordpress:feed-additions:1">17</post-id>	</item>
+            <post-id xmlns="com-wordpress:feed-additions:1">17</post-id>
+        </item>
     </channel>
 </rss>

@@ -6,10 +6,9 @@
 {% block contenido %}
     <ul>
         {% for entrada in entradas %}
-            <li><img src="{{ entrada.image.url }}"><a href="{{ entrada.link }}">{{ entrada.title }}</a>
-                ({{ entrada.link }})
-                <p>{{ entrada.pubDate|date('d-m-Y') }}</p>
-                <p>{{ entrada.description }}</p>
+            {% set host = entrada.link|split('/')[2] %}
+            <li><span class="small text-muted">{{ entrada.pubDate|date('d-m-Y') }} · {{ host }}</span>
+                <br><a href="{{ entrada.link }}">{{ entrada.title }}</a>
             </li>
         {% endfor %}
     </ul>
