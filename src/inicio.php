@@ -2,6 +2,7 @@
 global $twig;
 
 $feeds = array(
+    "https://www.tomasvotruba.cz/rss",
     "http://galatar.com/feed/",
     "https://www.killerphp.com/articles/feed/",
     "https://www.hitsubscribe.com/blog/feed/",
@@ -10,6 +11,7 @@ $feeds = array(
     "http://feeds.feedburner.com/desarrolloweb/novedades-articulos",
     "https://blog.phpdeveloper.org/feed/",
     "https://frontendfoc.us/rss/",
+    "https://www.dreamhost.com/blog/feed/",
 );
 $reserva = array(
     "http://ellatidodelucifer.blogspot.com/atom.xml",
@@ -29,6 +31,9 @@ usort($entradas, function ($feed1, $feed2) {
 try {
     $twig->display('inicio.html.twig', array('entradas' => $entradas));
 } catch (Twig_Error_Loader $e) {
+    var_dump($e);
 } catch (Twig_Error_Runtime $e) {
+    var_dump($e);
 } catch (Twig_Error_Syntax $e) {
+    var_dump($e);
 }
