@@ -1,0 +1,33 @@
+{# /templates/agregar_feed.html.twig #}
+{% extends 'layout_base.html.twig' %}
+
+{% block title %}Agregar Feed{% endblock %}
+
+{% block contenido %}
+    <h3>{{ feed }}</h3>
+
+    {% if entradas %}
+        <a href="index.php?p=agregar_feed" class="btn btn-primary">Agregar a mis feeds</a>
+        <div class="mt-4">
+            <ul>
+                {% for entrada in entradas %}
+                    {% set host = entrada.link|split('/')[2] %}
+                    <li><span class="small text-muted">{{ entrada.pubDate|date('d-m-Y') }}</span>
+                        <br><a href="{{ entrada.link }}">{{ entrada.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% elseif feed %}
+        <div class="alert alert-danger mt-4">
+            <p>Parece que el feed introducido no es valido o no es compatible con Feederico.</p>
+            <p><strong>{{ feed }}</strong></p>
+            <p>Intenta cambiar la url a algo como:
+            <ul>
+                <li>https://mi_blog_favorito.com/feed</li>
+                <li>https://mi_blog_favorito.com/rss</li>
+                <li>https://mi_blog_favorito.com/atom.rss</li>
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

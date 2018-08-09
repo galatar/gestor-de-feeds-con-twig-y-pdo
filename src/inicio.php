@@ -2,6 +2,7 @@
 global $twig;
 
 $feeds = array(
+    "https://www.tomasvotruba.cz/rss",
     "http://galatar.com/feed/",
     "https://www.killerphp.com/articles/feed/",
     "https://www.hitsubscribe.com/blog/feed/",
@@ -10,6 +11,7 @@ $feeds = array(
     "http://feeds.feedburner.com/desarrolloweb/novedades-articulos",
     "https://blog.phpdeveloper.org/feed/",
     "https://frontendfoc.us/rss/",
+    "https://www.dreamhost.com/blog/feed/",
 );
 $reserva = array(
     "http://ellatidodelucifer.blogspot.com/atom.xml",
