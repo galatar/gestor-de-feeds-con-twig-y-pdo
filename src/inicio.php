@@ -31,9 +31,15 @@ usort($entradas, function ($feed1, $feed2) {
 try {
     $twig->display('inicio.html.twig', array('entradas' => $entradas));
 } catch (Twig_Error_Loader $e) {
-    var_dump($e);
+    $error = $e->getMessage();
 } catch (Twig_Error_Runtime $e) {
-    var_dump($e);
+    $error = $e->getMessage();
 } catch (Twig_Error_Syntax $e) {
-    var_dump($e);
+    $error = $e->getMessage();
+}
+if ($error) {
+    echo 'Ha habido un error al cargar la plantilla';
+    if (FEED_DEBUG) {
+        echo $error;
+    }
 }

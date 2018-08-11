@@ -14,12 +14,15 @@ if (filter_has_var(INPUT_POST, 'feed')) {
 try {
     $twig->display('agregar_feed.html.twig', $variables);
 } catch (Twig_Error_Loader $e) {
-    $error = $e;
+    $error = $e->getMessage();
 } catch (Twig_Error_Runtime $e) {
-    $error = $e;
+    $error = $e->getMessage();
 } catch (Twig_Error_Syntax $e) {
-    $error = $e;
+    $error = $e->getMessage();
 }
-if ($error && FEED_DEBUG) {
-  echo 'Error Smarty:' . $error;
+if ($error) {
+    echo 'Ha habido un error al cargar la plantilla';
+    if (FEED_DEBUG) {
+        echo $error;
+    }
 }
