@@ -6,6 +6,9 @@ require_once '../vendor/autoload.php';
 // Llama al fichero con las constantes definidas para la aplicación
 // Este fichero no debe subirse al gestor de versiones
 require_once '../config.php';
+// Variable para gestionar errores
+$errores = array();
+
 // Configura la librería Twig
 $twig_loader = new Twig_Loader_Filesystem(FEED_TWIG_RUTA_PLANTILLAS);
 $twig = new Twig_Environment($twig_loader, array(
@@ -21,10 +24,7 @@ try {
     $dbh = new PDO($dsn, FEED_DB_USER, FEED_DB_PASSWORD);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e){
-    echo 'Error de conexión a la base de datos';
-    if (FEED_DEBUG) {
-      echo $e->getMessage();
-    }
+    $error= $e->getMessage();
 }
 
 // Enrutado
@@ -40,4 +40,12 @@ if (is_file($ruta_pagina)){
     require_once($ruta_pagina);
 } else {
     require_once('../src/error_404.php');
+}
+
+// Muestra errores si los hay
+if ($error) {
+    echo '<div class="alert alert-danger">Ha ocurrido un error. Contacte con el responsable del sistema.</div>';
+    if (FEED_DEBUG) {
+        echo '<div class="alert alert-danger">' . $error . '</div>';
+    }
 }

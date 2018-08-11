@@ -1,5 +1,6 @@
 <?php
 global $twig;
+global $error;
 
 $feeds = array(
     "https://gonzalo123.com/feed/",
@@ -36,10 +37,4 @@ try {
     $error = $e->getMessage();
 } catch (Twig_Error_Syntax $e) {
     $error = $e->getMessage();
-}
-if ($error) {
-    echo 'Ha habido un error al cargar la plantilla';
-    if (FEED_DEBUG) {
-        echo $error;
-    }
 }
