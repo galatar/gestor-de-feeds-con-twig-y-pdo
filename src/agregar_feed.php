@@ -14,9 +14,12 @@ if (filter_has_var(INPUT_POST, 'feed')) {
 try {
     $twig->display('agregar_feed.html.twig', $variables);
 } catch (Twig_Error_Loader $e) {
-    var_dump($e);
+    $error = $e;
 } catch (Twig_Error_Runtime $e) {
-    var_dump($e);
+    $error = $e;
 } catch (Twig_Error_Syntax $e) {
-    var_dump($e);
+    $error = $e;
+}
+if ($error && FEED_DEBUG) {
+  echo 'Error Smarty:' . $error;
 }

@@ -5,9 +5,8 @@
 
 {% block contenido %}
     <h3>{{ feed }}</h3>
-
     {% if entradas %}
-        <a href="index.php?p=agregar_feed" class="btn btn-primary">Agregar a mis feeds</a>
+        <a href="index.php?pagina=confirmar_feed&feed={{ feed }}" class="btn btn-primary">Agregar a mis feeds</a>
         <div class="mt-4">
             <ul>
                 {% for entrada in entradas %}

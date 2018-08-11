@@ -1,0 +1,14 @@
+<?php
+// Activa o desactiva el modo debug para cuando estás en desarrollo
+define('FEED_DEBUG', true);
+
+// Configuración para la librería Twig
+define('FEED_TWIG_RUTA_PLANTILLAS', '../templates');
+define('FEED_TWIG_RUTA_CACHE', '../var/cache');
+
+// Parámetros de conexión a tu base de datos
+define('FEED_DB_DRIVER', 'mysql');
+define('FEED_DB_HOST', 'localhost');
+define('FEED_DB_NAME', 'feederico');
+define('FEED_DB_USER', 'galatar');
+define('FEED_DB_PASSWORD', 'Un_mal_password_lo_tiene_cualquiera');
