@@ -1,6 +1,6 @@
 <?php
-global $twig;
-global $error;
+global $plantilla;
+global $datos;
 
 $feeds = array(
     "https://gonzalo123.com/feed/",
@@ -29,12 +29,5 @@ usort($entradas, function ($feed1, $feed2) {
     return strtotime($feed2->pubDate) - strtotime($feed1->pubDate);
 });
 
-try {
-    $twig->display('inicio.html.twig', array('entradas' => $entradas));
-} catch (Twig_Error_Loader $e) {
-    $error = $e->getMessage();
-} catch (Twig_Error_Runtime $e) {
-    $error = $e->getMessage();
-} catch (Twig_Error_Syntax $e) {
-    $error = $e->getMessage();
-}
+$plantilla = 'inicio.html.twig';
+$datos = array('entradas' => $entradas);

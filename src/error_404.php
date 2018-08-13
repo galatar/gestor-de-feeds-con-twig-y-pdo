@@ -1,9 +1,4 @@
 <?php
-global $twig;
+global $plantilla;
 
-try {
-    $twig->display('error_404.html.twig');
-} catch (Twig_Error_Loader $e) {
-} catch (Twig_Error_Runtime $e) {
-} catch (Twig_Error_Syntax $e) {
-}
+$plantilla='error_404.html.twig';

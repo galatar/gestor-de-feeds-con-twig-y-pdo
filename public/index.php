@@ -6,8 +6,12 @@ require_once '../vendor/autoload.php';
 // Llama al fichero con las constantes definidas para la aplicación
 // Este fichero no debe subirse al gestor de versiones
 require_once '../config.php';
-// Variable para gestionar errores
+
+// La plantilla (template) y los datos se definirán en el controlador secundario cuando toque
+$plantilla = "";
+$datos = array();
 $errores = array();
+
 
 // Configura la librería Twig
 $twig_loader = new Twig_Loader_Filesystem(FEED_TWIG_RUTA_PLANTILLAS);
@@ -27,13 +31,12 @@ try {
     $error= $e->getMessage();
 }
 
-// Enrutado
+// Captura pagina para enrutado
 if (filter_has_var(INPUT_GET, 'pagina')) {
     $pagina = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_URL);
 } else {
     $pagina = 'inicio';
 }
-
 // Llama al fichero php indicado en la ruta
 $ruta_pagina = '../src/' . $pagina . '.php';
 if (is_file($ruta_pagina)){
@@ -42,10 +45,22 @@ if (is_file($ruta_pagina)){
     require_once('../src/error_404.php');
 }
 
+// Muestra la plantilla con los datos que vienen del controlador secundario
+try {
+    $twig->display($plantilla, $datos);
+} catch (Twig_Error_Loader $e) {
+    $error = $e->getMessage();
+} catch (Twig_Error_Runtime $e) {
+    $error = $e->getMessage();
+} catch (Twig_Error_Syntax $e) {
+    $error = $e->getMessage();
+}
+
 // Muestra errores si los hay
 if ($error) {
     echo '<div class="alert alert-danger">Ha ocurrido un error. Contacte con el responsable del sistema.</div>';
     if (FEED_DEBUG) {
+        // Muestra el contenido del error si estamos en modo debug
         echo '<div class="alert alert-danger">' . $error . '</div>';
     }
 }

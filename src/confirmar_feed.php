@@ -1,6 +1,5 @@
 <?php
 global $dbh;
-global $smarty;
 
 if (filter_has_var(INPUT_GET, 'feed')) {
     $feed = filter_input(INPUT_GET, 'feed', FILTER_SANITIZE_URL);
