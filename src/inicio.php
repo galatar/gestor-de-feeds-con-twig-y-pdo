@@ -1,9 +1,11 @@
 <?php
 global $plantilla;
 global $datos;
+global $dbh;
 
 $feeds = array(
     "https://gonzalo123.com/feed/",
+    "https://www.htmlgoodies.com/rss.xml",
 );
 $reserva = array(
     "https://news.ycombinator.com/rss",
@@ -22,7 +24,9 @@ $reserva = array(
 $entradas = array();
 foreach ($feeds as $feed) {
     $xml = simplexml_load_file($feed);
-    $entradas = array_merge($entradas, $xml->xpath("//item"));
+    if (is_object($xml)) {
+        $entradas = array_merge($entradas, $xml->xpath("//item"));
+    }
 }
 //Ordena las entradas por fecha de publicación
 usort($entradas, function ($feed1, $feed2) {
