@@ -4,30 +4,32 @@
 {% block title %}Agregar Feed{% endblock %}
 
 {% block contenido %}
-    {% if entradas %}
-        <h3>{{ feed }}</h3>
-        <a href="index.php?pagina=confirmar_feed&feed={{ feed }}" class="btn btn-primary">Agregar a mis feeds</a>
+    {% if articulos %}
         <div class="alert alert-info mt-4">
             <p>Estos son los contenidos del feed que has indicado. Dale al botón "Agregar a mis feeds" para incluirlo en
                 tu lista o pulsa sobre los títulos para ver el artículo seleccionado.</p>
         </div>
+        <h4>{{ feed }}</h4>
+        <a href="index.php?pagina=confirmar_feed&feed={{ feed }}" class="btn btn-primary">Agregar a mis feeds</a>
         <div class="mt-4">
             <ul>
-                {% for entrada in entradas %}
-                    {% set host = entrada.link|split('/')[2] %}
-                    <li><span class="small text-muted">{{ entrada.pubDate|date('d-m-Y') }}</span>
-                        <br><a href="{{ entrada.link }}">{{ entrada.title }}</a>
+                {% for articulo in articulos %}
+                    {% set host = articulo.link|split('/')[2] %}
+                    <li><span class="small text-muted">{{ articulo.pubDate|date('d-m-Y') }}</span>
+                        <br><a href="{{ articulo.link }}">{{ articulo.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
         </div>
     {% elseif feed %}
-        <form method="post" action="index.php?pagina=agregar_feed" class="form-inline">
+        <form method="get" class="form-inline">
+            <input type="hidden" name="pagina" value="mostrar_feed">
             <div class="form-group col-md-8 mb-2">
-                <input class="form-control col-md-12" type="text" name="feed" placeholder="https://mi_blog_favorito.com/feed"
+                <input class="form-control col-md-12" type="text" name="feed"
+                       placeholder="https://mi_blog_favorito.com/feed"
                        value="{{ feed }}">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Nuevo feed</button>
+            <button type="submit" class="btn btn-primary mb-2">Mostrar feed</button>
         </form>
         <div class="alert alert-danger mt-4">
             <p>Parece que el feed introducido no es valido o no es compatible con Feederico.</p>
