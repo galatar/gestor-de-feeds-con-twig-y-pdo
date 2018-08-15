@@ -4,30 +4,19 @@
 {% block title %}Inicio{% endblock %}
 
 {% block contenido %}
-    <form method="post" action="index.php?p=agregar_feed" class="form-inline">
+    <form method="post" action="index.php?p=mostrar_feed" class="form-inline">
         <div class="form-group col-md-8 mb-2">
             <input class="form-control col-md-12" type="text" name="feed" placeholder="https://mi_blog_favorito.com/feed"
                    value="{{ feed }}">
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Nuevo feed</button>
+        <button type="submit" class="btn btn-primary mb-2">Mostrar feed</button>
     </form>
     <ul>
-        {% for entrada in entradas %}
-            {% set host = entrada.link|split('/')[2] %}
-            <li><span class="small text-muted">{{ entrada.pubDate|date('d-m-Y') }} · {{ host }}</span>
-                <br><a href="{{ entrada.link }}">{{ entrada.title }}</a>
+        {% for articulo in articulos %}
+            {% set host = articulo.link|split('/')[2] %}
+            <li><span class="small text-muted">{{ articulo.pubDate|date('d-m-Y') }} · {{ host }}</span>
+                <br><a href="{{ articulo.link }}">{{ articulo.title }}</a>
             </li>
         {% endfor %}
     </ul>
-    <form class="form-inline">
-        <div class="form-group mb-2">
-            <label for="staticEmail2" class="sr-only">Email</label>
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
-        </div>
-        <div class="form-group mx-sm-6 mb-2">
-            <label for="inputPassword2" class="sr-only">Password</label>
-            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
-    </form>
 {% endblock %}

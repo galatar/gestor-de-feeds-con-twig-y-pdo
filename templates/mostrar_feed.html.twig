@@ -1,19 +1,18 @@
-{# /templates/agregar_feed.html.twig #}
+{# /templates/mostrar_feed.html.twig #}
 {% extends 'layout_base.html.twig' %}
 
-{% block title %}Agregar Feed{% endblock %}
+{% block title %}Mostrar Feed{% endblock %}
 
 {% block contenido %}
     <h3>{{ feed }}</h3>
 
-    {% if entradas %}
-        <a href="index.php?p=agregar_feed" class="btn btn-primary">Agregar a mis feeds</a>
+    {% if articulos %}
         <div class="mt-4">
             <ul>
-                {% for entrada in entradas %}
-                    {% set host = entrada.link|split('/')[2] %}
-                    <li><span class="small text-muted">{{ entrada.pubDate|date('d-m-Y') }}</span>
-                        <br><a href="{{ entrada.link }}">{{ entrada.title }}</a>
+                {% for articulo in articulos %}
+                    {% set host = articulo.link|split('/')[2] %}
+                    <li><span class="small text-muted">{{ articulo.pubDate|date('d-m-Y') }}</span>
+                        <br><a href="{{ articulo.link }}">{{ articulo.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
