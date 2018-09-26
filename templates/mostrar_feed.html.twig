@@ -6,11 +6,15 @@
 {% block contenido %}
     {% if articulos %}
         <div class="alert alert-info mt-4">
-            <p>Estos son los contenidos del feed que has indicado. Dale al botón "Agregar a mis feeds" para incluirlo en
-                tu lista o pulsa sobre los títulos para ver el artículo seleccionado.</p>
+            <p>Estos son los contenidos del feed que has indicado.<p>
+            {% if feed_existe %}
+                <p>El feed ya existe en tu base de datos</p>
+            {% else %}
+                <p><a href="index.php?pagina=confirmar_feed&feed={{ feed }}" 
+                        class="btn btn-primary">Agregar a mis feeds</a></p>
+            {% endif %}
         </div>
         <h4>{{ feed }}</h4>
-        <a href="index.php?pagina=confirmar_feed&feed={{ feed }}" class="btn btn-primary">Agregar a mis feeds</a>
         <div class="mt-4">
             <ul>
                 {% for articulo in articulos %}

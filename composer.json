@@ -3,7 +3,10 @@
     "description": "Gestor de feeds con Twig y PDO",
     "type": "project",
     "require": {
-        "twig/twig": "^2.5"
+        "twig/twig": "^2.5",
+        "ext-PDO": "^5.3",
+        "ext-SimpleXML": "^5.3"
+
     },
     "license": "MIT",
     "authors": [

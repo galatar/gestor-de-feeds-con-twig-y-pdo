@@ -18,8 +18,8 @@
             <ul>
                 {% for articulo in articulos %}
                     {% set host = articulo.link|split('/')[2] %}
-                    <li><span class="small text-muted">{{ articulo.pubDate|date('d-m-Y') }} · {{ host }}</span>
-                        <br><a href="{{ articulo.link }}">{{ articulo.title }}</a>
+                    <li><span class="small text-muted">{{ articulo.pubDate|date('d-m-Y') }} · {{ host|escape('html') }}</span>
+                        <br><a href="{{ articulo.link|escape('html') }}">{{ articulo.title|escape('html') }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -31,7 +31,7 @@
                     <ul>
                         {% for feed in feeds %}
                             {% set host = feed.url|split('/')[2] %}
-                            <li><a href="index.php?pagina=mostrar_feed&feed={{ feed.url }}">{{ host }}</a></li>
+                            <li><a href="index.php?pagina=mostrar_feed&feed={{ feed.url|escape('html') }}">{{ host|escape('html') }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

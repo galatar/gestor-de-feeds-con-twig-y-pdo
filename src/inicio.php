@@ -1,15 +1,8 @@
 <?php
+/* /src/inicio.php */
 global $plantilla;
 global $datos;
 global $dbh;
-
-
-//$reserva = array(
-//    "https://blog.phpdeveloper.org/feed/",
-//    "https://frontendfoc.us/rss/",
-//    "https://www.dreamhost.com/blog/feed/",
-//    "http://ellatidodelucifer.blogspot.com/atom.xml",
-//);
 
 $query = $dbh->prepare('SELECT * FROM feed;');
 $query->setFetchMode(PDO::FETCH_ASSOC);
